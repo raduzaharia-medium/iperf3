@@ -1,0 +1,10 @@
+[Unit]
+Description=Automated network speed test client
+After=syslog.target network.target auditd.service
+
+[Service]
+# replace SERVER_IP with your choice
+ExecStart=/usr/bin/iperf3 -c SERVER_IP
+
+[Install]
+WantedBy=multi-user.target
